@@ -1,0 +1,44 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseHead from "../components/BaseHead.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+import MDLM from '../assets/MDLM.png';
+import Bellakeo from '../assets/Bellakeo.png';
+import placehold from '../assets/placehold.png';
+
+const projects = [
+  { title: "MDLM - D'Markuz", category: "Music Video", thumbnail: MDLM, link: "/projects/mdlm" },
+  { title: "Bellakeo - D'Markuz", category: "Music Video", thumbnail: Bellakeo, link: "/projects/bellakeo" },
+  { title: "____ _________", category: "Music Video", thumbnail: placehold, link: "/projects/placeholder" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+      <section class="max-w-7xl mx-auto px-6 py-20 mt-20">
+        <h2 class="font-display text-4xl mb-12 text-brand-dark font-medium">
+          Music Videos
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard
+              title={project.title}
+              category={project.category}
+              thumbnail={project.thumbnail}
+              link={project.link}
+            />
+          ))}
+        </div>
+      </section>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+
+const { title, category, thumbnail, link } = Astro.props;
+---
+
+<a href={link} class="group block overflow-hidden">
+  <div class="relative aspect-video overflow-hidden rounded-xl bg-gray-100">
+    <Image
+      src={thumbnail}
+      alt={title}
+      class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-purple/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+      <span class="text-white font-medium text-sm">
+        See Project →
+      </span>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <p class="text-xs uppercase tracking-widest text-brand-cyan font-bold">
+      {category}
+    </p>
+    <h3 class="text-xl font-semibold text-brand-dark mt-1">
+      {title}
+    </h3>
+  </div>
+</a>

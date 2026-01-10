@@ -2,14 +2,14 @@
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import { Image } from "astro:assets";
-
 import Logo from '../assets/Artboard_1.svg';
 ---
-<header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-  <nav class="max-w-7xl mx-auto px-6 h-20 flex justify-between">
 
-    <a href="/" class="flex items-center">
-    <Image 
+<header class="py-6 px-4 border-b border-gray-200">
+  <nav class="flex justify-between items-center max-w-262.5 mx-auto">
+
+    <a href="/" class="">
+      <Image 
         src={Logo} 
         width={60}
         alt="Lyrix Films Logo"
@@ -17,18 +17,18 @@ import Logo from '../assets/Artboard_1.svg';
       />
     </a>
 
-    <!-- Menu centrado -->
-    <div class="hidden md:flex items-center gap-8 font-medium text-brand-dark/70 mx-auto">
-      <HeaderLink href="/" class="hover:text-brand-cyan transition-colors">Home</HeaderLink>
-      <HeaderLink href="/projects" class="hover:text-brand-cyan transition-colors">Projects</HeaderLink>
+    <div class="hidden md:flex items-center gap-1 font-medium text-brand-dark/70 px-4 mx-6">
+      <HeaderLink href="/" class="nav-link">Home</HeaderLink>
+      <HeaderLink href="/projects" class="nav-link">Projects</HeaderLink>
     </div>
 
-    <!-- Botón -->
     <div class="flex items-center">
-      <a href="https://www.instagram.com/lyrixfilms/" target="_blank">
-        <button class="flex items-center gap-2 bg-gray-100 text-indigo-600 px-6 py-2 rounded-md font-semibold border-b-4 border-indigo-700 hover:brightness-95 transition-all">
-          CONTACT US
-        </button>
+      <a 
+        href="https://www.instagram.com/lyrixfilms/" 
+        target="_blank" 
+        class="bg-gray-100 text-indigo-600 px-6 py-2 rounded-md font-semibold border-b-4 border-indigo-700 hover:brightness-95 transition-all"
+      >
+        CONTACT US
       </a>
     </div>
 
@@ -36,20 +36,36 @@ import Logo from '../assets/Artboard_1.svg';
 </header>
 
 <style>
-    nav a {
-    padding: 1em 4.5em;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    color: var(--brand-dark-700);
+    padding: 0 1.5rem;
+    margin-left: 1.5rem;
+  }
+  .nav-link {
+    padding: 0.5rem 1rem;
     color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none;
+    transition: all 0.2s;
   }
-  nav a.active {
-    text-decoration: none;
-    border-bottom-color: #4f39f6 ;
+
+  .nav-link:hover {
+    color: #4f39f6;
+  }
+
+
+  .nav-link.active {
+    border-bottom-color: #4f39f6;
   }
 
   @media (max-width: 720px) {
     .social-links {
       display: none;
     }
-
+  }
 </style>

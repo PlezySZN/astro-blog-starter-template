@@ -10,20 +10,15 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://example.com",
   integrations: [mdx(), sitemap()],
-
   adapter: cloudflare({
       platformProxy: {
           enabled: true,
       },
 	}),
-
   vite: {
     plugins: [tailwindcss()],
   },
-
-output: 'server', // o 'static' según tu caso,
   image: {
-    // Esto le dice a Astro: "No uses sharp, solo pasa las imágenes"
-    service: { entrypoint: 'astro/assets/services/noop' },
+    service: { entrypoint: 'astro/assets/services/sharp' },
   },
 });

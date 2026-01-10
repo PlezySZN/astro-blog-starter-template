@@ -21,7 +21,9 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-image: {
-    service: { entrypoint: 'astro/assets/services/noop' }
+output: 'server', // o 'static' según tu caso,
+  image: {
+    // Esto le dice a Astro: "No uses sharp, solo pasa las imágenes"
+    service: { entrypoint: 'astro/assets/services/noop' },
   },
 });

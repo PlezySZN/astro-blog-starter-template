@@ -6,7 +6,7 @@ const { title, category, thumbnail, link } = Astro.props;
 
 <a href={link} class="group block overflow-hidden">
   <div class="relative aspect-video overflow-hidden rounded-xl bg-gray-100">
-    <Image
+    <img
       src={thumbnail}
       alt={title}
       class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"

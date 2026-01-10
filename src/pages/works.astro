@@ -5,14 +5,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
-import MDLM from '../assets/MDLM.png';
-import Bellakeo from '../assets/Bellakeo.png';
-import placehold from '../assets/placehold.png';
-
 const projects = [
-  { title: "MDLM - D'Markuz", category: "Music Video", thumbnail: MDLM, link: "/projects/mdlm" },
-  { title: "Bellakeo - D'Markuz", category: "Music Video", thumbnail: Bellakeo, link: "/projects/bellakeo" },
-  { title: "____ _________", category: "Music Video", thumbnail: placehold, link: "/projects/placeholder" },
+  { title: "MDLM - D'Markuz", category: "Music Video", thumbnail: "public/MDLM.png", link: "/projects/mdlm" },
+  { title: "Bellakeo - D'Markuz", category: "Music Video", thumbnail: "public/Bellakeo.png", link: "/projects/bellakeo" },
+  { title: "____ _________", category: "Music Video", thumbnail: "public/placehold.png", link: "/projects/placeholder" },
 ];
 ---
 

@@ -1,28 +1,25 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-import { Image } from "astro:assets";
-import Logo from '../assets/Artboard_1.svg';
 ---
 
 <header class="py-6 px-4 border-b border-gray-200">
   <nav class="flex justify-between items-center max-w-262.5 mx-auto">
 
     <a href="/" class="">
-      <Image 
-        src={Logo} 
+      <img
+        src="public/Artboard_1.svg" 
         width={60}
         alt="Lyrix Films Logo"
-        class="hover:opacity-80 transition-opacity"
-      />
+        class="hover:opacity-80 transition-opacity"/>
     </a>
 
-    <div class="hidden md:flex items-center gap-1 font-medium text-brand-dark/70 px-4 mx-6">
-      <HeaderLink href="/" class="nav-link">Home</HeaderLink>
-      <HeaderLink href="/projects" class="nav-link">Projects</HeaderLink>
-    </div>
-
-    <div class="flex items-center">
+    <div class="flex gap-6 text-center align-center nav">
+      <HeaderLink href="/" class="nav-link">HOME</HeaderLink>
+      <HeaderLink href="/works" class="nav-link">WORKS</HeaderLink>
+      <HeaderLink href="/about" class="nav-link">ABOUT</HeaderLink>
+      <HeaderLink href="/services" class="nav-link">SERVICES</HeaderLink>
+    <div class="">
       <a 
         href="https://www.instagram.com/lyrixfilms/" 
         target="_blank" 
@@ -40,6 +37,7 @@ import Logo from '../assets/Artboard_1.svg';
   .nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     font-weight: 500;
     color: var(--brand-dark-700);
